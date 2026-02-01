@@ -35,4 +35,11 @@ func main() {
 	fmt.Println("Hello World")
 }
 ```
+* Package declarations are either executables (meant to be run) or libraries (other `*.go` files import them). `package main` is a special package that defines an executable program. `package main` looks for a `func main()` for running the program. 
+* If I changed the package declaration in the go code above to `package hello`, then this file will be compiled as a library instead of an executable
+* You have to import ONLY the packages you need otherwise you get a compilation error. This is to prevent unused packages from accumulating as the program evolves
+
+### Good tools to have
+* `gofmt` to auto format the source code to Go's standards 
+* `goimports` to automanage the imports and keep only what's needed
 
