@@ -5,7 +5,7 @@
 * [Compile and run Go program](#compile-and-run-go-program)
 * [Basic hello world program](#basic-hello-world-program)
 * [Data Types](#data-types)
-* Variables
+* [Variables](#variables)
 * Functions
 * Control (if/else)
 * Loops
@@ -26,7 +26,7 @@
 * `go run <filename>.go` (eg: `go run helloworld.go`) builds the compiled binary, runs it and then removes the compiled binary.
 
 ## Basic Hello World program
-> Look at `basics/helloworld.go` for the code. We have this snippet
+> Look at `basics/helloworld.go]` for the code. We have this snippet
 ```go
 package main
 
@@ -56,4 +56,4 @@ func main() {
 * Strings: Create with double quote or backticks. Double quoted strings don't contain newlines but you can use `\n` and `\t` as escape characters
 * Booleans: True/False. `&&` is logical AND, `||` is logical OR, `!` is logical NOT
 
-## Data Types
+## Variables
