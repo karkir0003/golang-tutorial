@@ -4,6 +4,7 @@
 * [What is Go?](#what-is-go)
 * [Compile and run Go program](#compile-and-run-go-program)
 * [Basic hello world program](#basic-hello-world-program)
+* [Data Types](#data-types)
 * Variables
 * Functions
 * Control (if/else)
@@ -25,7 +26,7 @@
 * `go run <filename>.go` (eg: `go run helloworld.go`) builds the compiled binary, runs it and then removes the compiled binary.
 
 ## Basic Hello World program
-* Look at `basics/helloworld.go` for the code. We have this snippet
+> Look at `basics/helloworld.go` for the code. We have this snippet
 ```go
 package main
 
@@ -44,3 +45,15 @@ func main() {
 * `goimports` to automanage the imports and keep only what's needed. Install [here](https://pkg.go.dev/golang.org/x/tools/cmd/goimports) using the terminal command
 * `go doc` to lookup documentation of a function in go. Eg: for the `Println` function, you can run `go doc fmt Println`
 
+## Data Types
+
+> Look at `basics/data-types/data-type-operations.go`
+
+* Integers: you have `uint8`, `uint16`, `uint32`, `uint64`, `int8`, `int16`, `int32`, and `int64`. For example, `uint16` means unsigned 16 bit integer
+  * The alias types (more common) are `byte` (for `uint8`), `rune` (same as `int32`). `int` is signed integer and you use this for the most part. This is machine dependent based on the architecture
+* Floating point numbers: `float32` or `float64`. You can use `complex64` and `complex128` for imaginary numbers. Most of the time, use `float64`
+* Arithmetic: add, subtract, multiply, divide, modulo
+* Strings: Create with double quote or backticks. Double quoted strings don't contain newlines but you can use `\n` and `\t` as escape characters
+* Booleans: True/False. `&&` is logical AND, `||` is logical OR, `!` is logical NOT
+
+## Data Types
