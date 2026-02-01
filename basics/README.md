@@ -40,6 +40,7 @@ func main() {
 * You have to import ONLY the packages you need otherwise you get a compilation error. This is to prevent unused packages from accumulating as the program evolves
 
 ### Good tools to have
-* `gofmt` to auto format the source code to Go's standards 
+* `gofmt` to auto format the source code to Go's standards. You can run a command like `gofmt -w helloworld.go`
 * `goimports` to automanage the imports and keep only what's needed. Install [here](https://pkg.go.dev/golang.org/x/tools/cmd/goimports) using the terminal command
+* `go doc` to lookup documentation of a function in go. Eg: for the `Println` function, you can run `go doc fmt Println`
 
