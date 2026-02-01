@@ -6,9 +6,8 @@
 * [Basic hello world program](#basic-hello-world-program)
 * [Data Types](#data-types)
 * [Variables](#variables)
+* [Control Structures](#control-structures)
 * Functions
-* Control (if/else)
-* Loops
 
 ## What is Go?
 * Programming language invented at Google
@@ -111,3 +110,5 @@ You can also define constants which are variables where we cannot change the val
 
 Use `fmt` library also for parsing input from the terminal. See `variables/double_number.go` for a sample script
 
+
+## Control Structures
