@@ -1,7 +1,7 @@
 # Go Basics
 
 ## Overview of Topics:
-* [What is Go?][#What is Go?]
+* [What is Go?][# What is Go?]
 * Basic hello world program
 * Variables
 * Functions
