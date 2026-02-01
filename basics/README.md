@@ -56,4 +56,17 @@ func main() {
 * Strings: Create with double quote or backticks. Double quoted strings don't contain newlines but you can use `\n` and `\t` as escape characters
 * Booleans: True/False. `&&` is logical AND, `||` is logical OR, `!` is logical NOT
 
+
 ## Variables
+> Look at `variables/variables.go` for the sample code
+
+* Variable is just a memory address for storing a value. We specify type and name
+
+Example Declaration:
+```go
+var x string
+x = "Hello, World"
+fmt.Println(x)
+```
+
+As you may guess `x` is name of variable. It's of type string and we assign it the value of `"Hello, World"`
