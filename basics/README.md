@@ -1,7 +1,8 @@
 # Go Basics
 
 ## Overview of Topics:
-* [What is Go?][#what-is-go]
+* [What is Go?](#what-is-go)
+* [Compile and run Go program](#compile-and-run-go-program)
 * Basic hello world program
 * Variables
 * Functions
@@ -23,5 +24,15 @@
 * Produce compiled file: `go build <filename>.go` (eg: `go build helloworld.go` produces a compiled binary of `helloworld` that's executable). You can run the executable using `./helloworld`. Use this for re-running the same binary every time with no unexpected changes
 * `go run <filename>.go` (eg: `go run helloworld.go`) builds the compiled binary, runs it and then removes the compiled binary.
 
-##
+## Basic Hello World program
+* Look at `basics/helloworld.go` for the code. We have this snippet
+```go
+package main
+
+import "fmt"
+
+func main() {
+	fmt.Println("Hello World")
+}
+```
 
