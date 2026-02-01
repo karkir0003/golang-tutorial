@@ -70,3 +70,44 @@ fmt.Println(x)
 ```
 
 As you may guess `x` is name of variable. It's of type string and we assign it the value of `"Hello, World"`
+
+The preferred way is through this shorthand
+```go
+x := "Hello, World"
+fmt.Println(x)
+```
+Here, we see that variable `x` is assigned value of `"Hello, World"`. Go compiler autoinfers the type
+
+Use camel case for naming variables in go
+
+**NOTE:** "Go is lexically scoped using blocks". That means if you declare a variable in a function, the variable's scope is that function. Here's an example
+
+```go
+var x string = "Hello, World"
+
+func main() {
+    fmt.Println(x)
+}
+
+func f() {
+    fmt.Println(x)
+}
+```
+The `x` variable here can be used in both `main()` and `f()` functions
+
+```go
+func main() {
+    var x string = "Hello, World"
+    fmt.Println(x)
+}
+
+func f() {
+    fmt.Println(x)
+}
+```
+However, we will get a compilation error in this code when we move `x` into the scope of the `main()` function. Function `f()` can't access `x`
+
+You can also define constants which are variables where we cannot change the value
+
+Use `fmt` library also for parsing input from the terminal. See `variables/double_number.go` for a sample script
+
