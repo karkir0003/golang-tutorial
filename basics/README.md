@@ -3,7 +3,7 @@
 ## Overview of Topics:
 * [What is Go?](#what-is-go)
 * [Compile and run Go program](#compile-and-run-go-program)
-* Basic hello world program
+* [Basic hello world program](#basic-hello-world-program)
 * Variables
 * Functions
 * Control (if/else)
