@@ -112,3 +112,30 @@ Use `fmt` library also for parsing input from the terminal. See `variables/doubl
 
 
 ## Control Structures
+* If / else if / else statements work like other programming languages
+
+```go
+x := 10
+if (x > 10) {
+    fmt.Println("Big Number")
+} else {
+    fmt.Println("Small Number")
+}
+```
+
+If you have multiple cases, you can use switch statement like shown below. Fall back to `default` if provided
+
+```go
+x := 10 % 3
+switch x {
+    case 0:
+      fmt.Println("divisible by 3")
+    case 1: 
+      fmt.Println("remainder 1 when divided by 3")
+    case 2:
+      fmt.Println("remainder 2 when divided by 3")
+    default:
+      fmt.Println("Invalid number")
+}
+```
+
