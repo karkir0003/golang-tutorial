@@ -41,5 +41,5 @@ func main() {
 
 ### Good tools to have
 * `gofmt` to auto format the source code to Go's standards 
-* `goimports` to automanage the imports and keep only what's needed
+* `goimports` to automanage the imports and keep only what's needed. Install [here](https://pkg.go.dev/golang.org/x/tools/cmd/goimports) using the terminal command
 
