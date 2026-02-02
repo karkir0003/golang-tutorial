@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 func main() {
 	/**
 	Write a program that prints the numbers from 1 to 100,
@@ -8,4 +10,20 @@ func main() {
 
 	Also, allow the user to enter an integer
 	*/
+
+	currString := ""
+	for i := 1; i <= 100; i++ {
+		currString = ""
+		if i%3 == 0 {
+			currString += "Fizz"
+		}
+		if i%5 == 0 {
+			currString += "Buzz"
+		}
+		if len(currString) > 0 {
+			fmt.Println(currString)
+		} else {
+			fmt.Println(i)
+		}
+	}
 }
