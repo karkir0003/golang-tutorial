@@ -156,3 +156,6 @@ for i := 1; i <= 10; i++ {
 }
 ```
 
+## Arrays, Slices, Maps
+Some key built-in data structures are arrays, slices, and maps
+
