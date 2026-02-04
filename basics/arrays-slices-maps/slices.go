@@ -45,4 +45,27 @@ func main() {
 	fmt.Println("slice 1: ", slice1)
 	fmt.Println("slice 2: ", slice2) // same underlying array for slice2 built on top b/c enough capacity
 
+	// copy function
+
+	slice1 = []int{1, 2, 3}
+	slice2 = make([]int, 2)
+
+	/**
+	Copy slice 1 into slice 2
+
+	slice 1 = [1, 2, 3]
+	slice 2 = [1, 2]
+	copy slice 1 contents into slice 2, so only the first two elements of slice 1 are copied!
+	*/
+	copy(slice2, slice1) // copy slice 1 into slice 2
+	fmt.Println("After copy!")
+	fmt.Println("slice 1: ", slice1)
+	fmt.Println("slice 2: ", slice2)
+
+	// Is this a deep copy?
+	slice2[0] = 500
+	fmt.Println("After a modification. Is it deepcopy?")
+	fmt.Println("slice 1: ", slice1)
+	fmt.Println("slice 2: ", slice2) // Yes, it's a deepcopy if you use the copy function!
+
 }
