@@ -7,7 +7,7 @@
 * [Data Types](#data-types)
 * [Variables](#variables)
 * [Control Structures](#control-structures)
-* Functions
+* [Functions](#functions)
 
 ## What is Go?
 * Programming language invented at Google
