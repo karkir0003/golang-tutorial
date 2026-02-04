@@ -11,6 +11,8 @@ type Shape interface {
 	// The function name and return type need to match for Go to determine the interface is
 	// "implemented" by the concrete struct
 	area() float64
+
+	perimeter() float64
 }
 
 type Circle struct {
@@ -21,12 +23,20 @@ func (c *Circle) area() float64 {
 	return math.Pi * c.r * c.r
 }
 
+func (c *Circle) perimeter() float64 {
+	return 2 * math.Pi * c.r
+}
+
 type Rectangle struct {
 	x, y, height, width float64
 }
 
 func (r *Rectangle) area() float64 {
 	return r.height * r.width
+}
+
+func (r *Rectangle) perimeter() float64 {
+	return 2*r.height + 2*r.width
 }
 
 /**
@@ -47,8 +57,17 @@ func totalArea(shapes ...Shape) float64 {
 	return area
 }
 
+func totalPerimeter(shapes ...Shape) float64 {
+	perimeter := 0.0
+	for _, s := range shapes {
+		perimeter += s.perimeter()
+	}
+	return perimeter
+}
+
 func main() {
 	circle := Circle{x: 0, y: 0, r: 5}
 	rectangle := Rectangle{x: 5, y: 10, height: 2, width: 10}
 	fmt.Println("Total area of the shapes: ", totalArea(&circle, &rectangle))
+	fmt.Println("Total perimenter of the shapes: ", totalPerimeter(&circle, &rectangle))
 }
