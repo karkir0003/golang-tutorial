@@ -232,6 +232,75 @@ A shorthand (use this way more often) to initialize map is
 elements := map[string][int]{"key": 10}
 ```
 
+## Functions
+* In the previous modules, we've been working in the `main()` function. We should be able to write our own functions
 
+Sample placeholder function
+```go
+func average(xs []float64) float64 {
+  panic("Not Implemented")
+}
+```
+
+notice the similarity to Java
+```java
+public double average(double[] xs) {
+  throw new Exception("Not Implemented")
+}
+```
+
+* All functions in go use `func` keyword and in parameters, you define using the `name type, name type` format
+* Return type of function is after the parameter specifications and that completes the function signature
+
+### Variadic Functions
+* Special form available for the last parameter in a Go function:
+
+```go
+func add(args ...int) int {
+  total := 0
+  for _, v := range args {
+    total += v
+  }
+  return total
+}
+
+func main() {
+  fmt.Println(add(1,2,3))
+  // passing in a slice
+  xs := []int{1, 2, 3}
+  fmt.Println(add(xs...))
+}
+```
+See here that `add` func can be called with multiple integers. This is the "variadic parameter". 
+
+The ellipsis before the type name of the last parameter, you can indicate that it takes 0 or more parameters
+
+Here, we can pass as many ints as we want. We can pass in slice to variadic function with ellipsis
+
+### Closures
+* Just like Python, you can create functions inside of functions
+
+```go
+func main() {
+  add := func(x, y int) int {
+    return x + y
+  }
+  fmt.Println(add(1, 1))
+}
+```
+
+Here `add` is a local variable that has type `func(int, int) int`. This `add` function will have access to other local variables
+
+```go
+func main() {
+  x := 0
+  increment := func () int {
+    x++
+    return x
+  }
+  fmt.Println(increment())
+  fmt.Println(increment())
+}
+```
 
 
