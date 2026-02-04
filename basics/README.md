@@ -278,6 +278,7 @@ The ellipsis before the type name of the last parameter, you can indicate that i
 Here, we can pass as many ints as we want. We can pass in slice to variadic function with ellipsis
 
 ### Closures
+> Check out `basics/functions/closures.go`
 * Just like Python, you can create functions inside of functions
 
 ```go
@@ -302,5 +303,81 @@ func main() {
   fmt.Println(increment())
 }
 ```
+
+### defer
+`defer` is a statement that allows Go to schedule a function call to be run after function completes. 
+
+```go
+func first() {
+  fmt.Println("1st")
+}
+func second() {
+  fmt.Println("2nd")
+}
+
+func main() {
+  defer second()
+  first()
+}
+```
+The above program prints `1st` followed by `2nd`. Defer moves the call to `second` at the end of the functoin
+
+**You'll often use defer to free up resouces in some way such as "closing file" after reading the file**
+
+Defer is run EVEN when panic occurs
+
+### panic and recover
+> Check out `basics/functions/panic.go`
+* panic introduces runtime error. We can handle a runtime panic with a built in `recover` function
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+  defer func() {
+    str := recover()
+    fmt.Println(str)
+  }
+  panic("PANIC") // HAVE to defer the recover so it runs after panic
+}
+```
+
+Panic generally indicates programmer error (eg: out of bounds index, forget to initialize map) or an exceptional condition where we can't easily recover from (PANIC because "go doesnt know what to do")
+
+
+### Pointers
+> Check out `basics/functions/pointers.go`
+* When we call a function that takes an argument, we "pass by value"
+
+```go
+func zero(x int) {
+  x = 0
+}
+
+func main() {
+  x := 5
+  zero(x)
+  fmt.Println(x) // still 5 because we pass the x by VALUE
+}
+```
+
+Suppose we actually want to modify the `x` var in the `zero` function. We should pass the REFERENCE in instead (AKA the "pointer")
+
+```go
+func zero(xPtr *int) {
+  *xPtr = 0 // pass in the memory address of x and update the value of it to 0
+}
+
+func main() {
+  x := 5
+  zero(&x) // pass in address of x
+  fmt.Println(x)
+}
+```
+
+* `&` gives pointer! (ie: the reference to memory location)
+* `*` dereferences the pointer. You get access to the value the pointer points to
 
 
