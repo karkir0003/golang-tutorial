@@ -382,4 +382,78 @@ func main() {
 * `*` dereferences the pointer. You get access to the value the pointer points to
 
 ## Structs
+> Check out `basics/structs/shapes.gp`
 
+* Structs are pretty much typed collections of fields
+* Use them to group data together to form records
+
+```go
+type Person struct {
+  name string
+  age int
+}
+```
+
+Here we have a struct called `Person` with properties of `name` and `age`. Think of `person` as a new type we've introduced
+
+Initialization:
+```go
+var p Person // new instance of Person but everything set to default values
+p := new(Person) // using new keyword to create new object. Allocate memory for all the fields and return POINTER to the struct
+p := Person{name: "Bob", age: 20} // create a Person instance with an initial value
+```
+
+**You usually operate on the "pointer to the struct" so you can update fields seamlessly**
+Remember, when you pass parameters to a function in Go, it's **pass by value**
+
+Access fields with `.` operator:
+```go
+p := Person{name: "Bob", age: 20}
+fmt.Println(p.name)
+fmt.Println(p.age)
+```
+
+### Methods
+Functions you can perform on your struct. Remember, you operate on the POINTER!
+```go
+func (p *Person) getName() string {
+  return p.name
+}
+
+bob := Person{name: "Bob", age: 20}
+fmt.Println(bob.getName()) // calling the getter/setter
+```
+
+Suppose our Person has a `talk()` method like this one
+
+```go
+func (p *Person) talk() {
+  fmt.Println("Hi, my name is: ", p.name)
+}
+```
+
+### Embedded Types
+Struct's fields have a "has-a" relationship. For example, a `Person` struct has a `name` attribute. 
+
+Suppose we want to create an Android struct, but we want to say that Android IS A person, so we can do this
+
+```go
+type Android struct {
+  Person
+  Model string
+}
+```
+With Android struct, we can call `Person` methods like:
+```go
+a := new Android()
+a.talk()
+```
+
+So, an Android is a Person and because a Person can talk, an Android can talk
+
+### Interfaces
+> Check out `basics/structs/improved_shapes.go`
+
+If you look at `basics/structs/shapes.go`, both the `Rectangle` and `Circle` have `area()` methods even though the underlying implementation is different. We should make these similarities explicit and provide a contract for other shapes in the system.
+
+We can use `interface` type to help us. Check out the `basics/structs/improved_shapes.go`!
