@@ -8,6 +8,7 @@
 * [Variables](#variables)
 * [Control Structures](#control-structures)
 * [Functions](#functions)
+* [Structs](#structs)
 
 ## What is Go?
 * Programming language invented at Google
@@ -380,4 +381,5 @@ func main() {
 * `&` gives pointer! (ie: the reference to memory location)
 * `*` dereferences the pointer. You get access to the value the pointer points to
 
+## Structs
 
