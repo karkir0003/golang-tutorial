@@ -38,6 +38,9 @@ func main() {
 	fmt.Println("slice 2 originally: ", slice2)
 
 	slice1[0] = 500 // set the first element to 500. What happens to slice1 and slice2
+
+	// NOTE: We use &slice1[0] to represent address of first element in the underlying array for the slice
+	// &slice1 means the "memory address in the STACK" where the slice1 data lives
 	fmt.Println("slice 1 and slice 2 point to same address: ", &slice1[0] == &slice2[0])
 	fmt.Println("slice 1: ", slice1)
 	fmt.Println("slice 2: ", slice2) // same underlying array for slice2 built on top b/c enough capacity
