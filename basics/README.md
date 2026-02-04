@@ -208,5 +208,30 @@ Underlying data representation of a slice:
 
 ![Slice Memory Representation](slice-memory-representation.png)
 
+### Maps
+> Check out `basics/arrays-slices-maps/maps.go`
+Map is UNORDERED collection of key/value pairs. AKA the hashmap in Java
+
+WRONG WAY:
+```go
+var x map[string]int // x is a map of strings to ints
+x["key"] = 10 // set an entry in map
+fmt.Println(x) //run time error. You have to initialize the map :)
+```
+
+RIGHT WAY:
+```go
+x := make(map[string]int)
+x["key"] = 10
+fmt.Println(x["key"])
+```
+
+A shorthand (use this way more often) to initialize map is 
+
+```go
+elements := map[string][int]{"key": 10}
+```
+
+
 
 
