@@ -112,6 +112,7 @@ Use `fmt` library also for parsing input from the terminal. See `variables/doubl
 
 
 ## Control Structures
+> Check out the files in `basics/control-structures`
 * If / else if / else statements work like other programming languages
 
 ```go
@@ -158,4 +159,54 @@ for i := 1; i <= 10; i++ {
 
 ## Arrays, Slices, Maps
 Some key built-in data structures are arrays, slices, and maps
+
+### Arrays
+> See the files in `basics/arrays-slices-maps/average_grade.go`
+- Sequence of elements with **FIXED** length
+
+```go
+var x [5]int // array of integers with 5 elements as length
+
+x[4] = 100 //at index 4 (0-indexed), assign to element 100
+
+fmt.Println(x) //[0, 0, 0, 0, 100]
+
+fmt.Println(len(x)) // length of array (like string)
+```
+
+### Slices
+
+> Check `basics/arrays-slices-maps/slices.go`
+
+Slices are segments of array. Slices are indexable and have a length. Arrays in Go cannot change length, but slices allow for length to change
+
+```go
+x := make([]float64, 5) // create a slice with underlying float64 array of length 5
+X := make([]float64, 5, 10) // create a slice with underlying float64 array of length 5 with capacity 10
+```
+
+![Slice of length 5 with capacity 10](slice-diagram-1.png)
+
+Key functions for slice:
+* Extract subsection of array and that's a slice
+* `append`: Add element at end of slice. If there is sufficient capacity, add to same array. If not, new array created and elements copied over. NEW reference is returned
+* `copy`: Takes in two arguments `dst` and `src`. All entries in `src` are copied into `dst` OVERWRITING what's there. If lengths of the two slices are not the same, the smaller of the two will be used
+
+```go
+
+func main() {
+  slice1 := []int{1, 2, 3}
+  slice2 := append(slice1, 4, 5)
+  fmt.Println(slice1, slice2) // [1, 2, 3] in slice 1, but [1, 2, 3, 4, 5] in slice 2
+}
+```
+
+Underlying data representation of a slice:
+* Header containing the ptr to the memory address of the first element of the underlying array
+* current length of array
+* capacity of array
+
+![Slice Memory Representation](slice-memory-representation.png)
+
+
 
