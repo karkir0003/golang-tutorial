@@ -461,5 +461,5 @@ If you look at `basics/structs/shapes.go`, both the `Rectangle` and `Circle` hav
 We can use `interface` type to help us. Check out the `basics/structs/improved_shapes.go`!
 
 ## Packages
-> Check out `basics/packages/` directory
+> Check out the files within the `basics/packages/` directory
 So far, we've mainly been using the `fmt` package. We have a whole host of other packages in the Go ecosystem to tap into
