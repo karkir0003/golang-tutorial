@@ -386,6 +386,7 @@ func main() {
 
 * Structs are pretty much typed collections of fields
 * Use them to group data together to form records
+* Good explanation of "struct instance" [here](https://www.reddit.com/r/golang/comments/x8utok/dumb_question_of_vocabulary_is_a_struct_instance/)
 
 ```go
 type Person struct {
