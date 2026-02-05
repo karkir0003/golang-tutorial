@@ -9,6 +9,7 @@
 * [Control Structures](#control-structures)
 * [Functions](#functions)
 * [Structs](#structs)
+* [Packages](#packages)
 
 ## What is Go?
 * Programming language invented at Google
@@ -458,3 +459,7 @@ So, an Android is a Person and because a Person can talk, an Android can talk
 If you look at `basics/structs/shapes.go`, both the `Rectangle` and `Circle` have `area()` methods even though the underlying implementation is different. We should make these similarities explicit and provide a contract for other shapes in the system.
 
 We can use `interface` type to help us. Check out the `basics/structs/improved_shapes.go`!
+
+## Packages
+> Check out `basics/packages/` directory
+So far, we've mainly been using the `fmt` package. We have a whole host of other packages in the Go ecosystem to tap into
