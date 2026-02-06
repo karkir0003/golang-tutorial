@@ -8,7 +8,6 @@
  */
 
 // Problem: https://leetcode.com/problems/binary-tree-right-side-view/
-import "fmt"
 
 func rightSideView(root *TreeNode) []int {
 	/**
