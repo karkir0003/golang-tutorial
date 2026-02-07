@@ -1,5 +1,3 @@
-package main
-
 import "fmt"
 
 func palindrome(s string) bool {
